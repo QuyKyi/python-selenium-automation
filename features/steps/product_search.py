@@ -39,3 +39,19 @@ def verify_first_result(context, search_word):
     first_result = context.driver.find_element(*RESULTS).text
     print('\n{}'.format(first_result))
     assert search_word in first_result, "Expected word '{}' in message, but got '{}'".format(search_word, first_result)
+
+
+@when("Inputs Dress into search field")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    raise NotImplementedError(u'STEP: When Inputs Dress into search field')
+
+
+@step("First result contains")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    raise NotImplementedError(u'STEP: And First result contains')
