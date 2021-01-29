@@ -4,7 +4,7 @@ from behave import given, when, then
 
 @given('Open Amazon page')
 def open_amazon(context):
-    context.drivecomr.get('https://www.amazon./')
+    context.driver.get('https://amazon.com/')
 
 @when('Input Watches into Amazon search field')
 def input_amazon_search(context):

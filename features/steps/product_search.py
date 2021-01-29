@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from behave import given, when, then
+from behave import given, when, then, step
 from time import sleep
 
 
@@ -49,8 +49,7 @@ def step_impl(context):
     raise NotImplementedError(u'STEP: When Inputs Dress into search field')
 
 
-@step("First result contains")
-def step_impl(context):
+def step_impl(context)
     """
     :type context: behave.runner.Context
     """
