@@ -49,7 +49,7 @@ def step_impl(context):
     raise NotImplementedError(u'STEP: When Inputs Dress into search field')
 
 
-def step_impl(context)
+def step_impl(context):
     """
     :type context: behave.runner.Context
     """

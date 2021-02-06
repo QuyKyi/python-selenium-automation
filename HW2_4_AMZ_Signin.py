@@ -5,7 +5,7 @@ driver = webdriver.Chrome(executable_path="/Users/user/Documents/Automation/pyth
 driver.implicitly_wait(4)
 
 driver.get('https://www.amazon.com/')
-search_field = driver.find_element(By.XPATH,"//a[contains(@href,'nav_orders_first')]").click()
+driver.find_element(By.XPATH,"//a[contains(@href,'nav_orders_first')]").click()
 
 actual_text = driver.find_element(By.XPATH, "//h1[@class='a-spacing-small']").text
 expected_text = 'Sign-In'
