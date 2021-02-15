@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
+from selenium.webdriver.common.keys import Keys
 
 SEARCH_FIELD = (By.ID, 'twotabsearchtextbox')
 SEARCH_ICON = (By.ID, 'nav-search-submit-button')
@@ -22,6 +23,11 @@ def click_search_amazon(context):
     context.driver.find_element(*SEARCH_ICON).click()
 
 
+@when('Search for {search_word}')
+def input_search(context, search_word):
+    context.driver.find_element(*SEARCH_FIELD).send_keys(search_word, Keys.ENTER)
+
+
 @then('Product results for {result_word} are shown on Amazon')
 def verify_search_result(context, result_word):
     actual_text = context.driver.find_element(*RESULT).text
@@ -32,3 +38,7 @@ def verify_search_result(context, result_word):
 @then('Page URL has {query} in it')
 def verify_url_contains_query(context, query):
     assert query in context.driver.current_url, f'Watches not in {context.driver.current_url}'
+
+@given('Open Dress {productid} page')
+def open_amazon_page(context, productid):
+    context.driver.get('https://amazon.com/gp/product')
